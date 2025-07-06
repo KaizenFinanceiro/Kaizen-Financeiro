@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-books</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --cor0: #caf0f8; /* Cor mais clara */
+            --cor1: #00b4d8; /* Azul claro */
+            --cor2: #0096c7; /* Azul médio */
+            --cor3: #023e8a; /* Azul escuro */
+            --cor4: #03045e; /* Azul muito escuro */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0; /* Remover padding do body para header e main controlarem */
+            background-color: var(--cor0); /* Cor de fundo principal */
+            color: #333; /* Cor do texto padrão */
+        }
+
+        header {
+            padding: 10px;
+            background-color: var(--cor3); /* Cor do cabeçalho */
+            min-width: 300px;
+            max-width: 900px;
+            margin: auto; /* Centraliza o header */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra para o cabeçalho */
+        }
+        header h1 {
+            color: var(--cor0); /* Título do cabeçalho em cor clara */
+            font-size: 1.5em;
+            margin: 10px 0; /* Ajusta margem do título no header */
+            font-weight: bold;
+            text-align: center; /* Centraliza o título no header */
+        }
+        header div { /* Para links de navegação, se houver */
+            text-align: right;
+        }
+        header a {
+            text-decoration: none;
+            color: var(--cor0);
+            padding: 5px;
+        }
+        header a:hover {
+            background-color: var(--cor4);
+            border-radius: 5px;
+            transition-duration: 0.7s;
+        }
+
+        main {
+            padding: 10px;
+            background-color: #fFfFfF; /* Fundo branco para o conteúdo principal */
+            min-width: 300px;
+            max-width: 900px;
+            margin: auto; /* Centraliza o main */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra para o main */
+        }
+        main h1 { /* Título principal da página de ebooks */
+            font-size: 1.8em; /* Aumentado para ser mais proeminente */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 20px 0 10px 0; /* Margens para o título */
+            color: var(--cor4); /* Cor do título principal da página */
+            text-align: center; /* Centraliza o título principal */
+        }
+        main h2 { /* Subtítulos menores dentro do main */
+            font-size: 1.3em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: var(--cor3); /* Cor dos subtítulos */
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-align: left; /* Alinhamento padrão dos subtítulos */
+        }
+        main h3 { /* Títulos dos ebooks individuais */
+            font-size: 1.2em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: var(--cor4); /* Cor dos títulos dos ebooks */
+            min-height: 50px; /* Mantém a altura mínima para consistência */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        main h4 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: var(--cor2); /* Cor para h4, se usado */
+        }
+        main p {
+            text-align: justify;
+            text-indent: 2em;
+            margin-bottom: 1em;
+            color: #555; /* Cor para parágrafos */
+        }
+
+        /* Estilo para a imagem de destaque ou geral dentro do main */
+        main img { /* Estilo geral para imagens dentro do main */
+            width: 80%; /* Ajusta a largura para 80% do contêiner pai */
+            height: auto;
+            display: block; /* Garante que a imagem esteja em sua própria linha */
+            margin: 0 auto; /* Centraliza a imagem */
+            border-radius: 8px; /* Arredonda as bordas */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra para destaque */
+        }
+        div.imagem { /* Contêiner para imagem de destaque, se houver */
+            text-align: center;
+            background-color: var(--cor2); /* Cor de fundo para o bloco da imagem */
+            border-radius: 12px;
+            padding: 10px; /* Padding ao redor da imagem */
+            margin: 20px auto; /* Centraliza e adiciona margem */
+            max-width: fit-content; /* Ajusta largura ao conteúdo */
+        }
+        div.imagem > img {
+            margin: 10px 0; /* Margem interna para a imagem dentro do div.imagem */
+            width: auto; /* Deixa a imagem com largura automática para não exceder o div */
+            max-width: 100%; /* Garante que não ultrapasse o div pai */
+        }
+
+
+        /* Estilos específicos para a grade de e-books */
+        .ebook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+            margin-top: 20px; /* Espaço após o texto introdutório */
+        }
+        .ebook-item {
+            border: 1px solid var(--cor1);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .ebook-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .ebook-item img { /* ESTILO ESPECÍFICO PARA AS CAPAS DOS E-BOOKS NA GRADE */
+            max-width: 180px; /* Mantém o tamanho para a grade */
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            /* Sobrescreve main img para manter o grid funcional */
+            width: auto; /* Garante que não use os 80% do main img */
+        }
+        .ebook-item p {
+            font-size: 0.9em;
+            color: #555;
+            min-height: 60px;
+        }
+        .ebook-item .cta-button {
+            display: inline-block;
+            background-color: var(--cor2);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .ebook-item .cta-button:hover {
+            background-color: var(--cor3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: var(--cor3); /* Fundo do rodapé */
+            color: black; /* Texto do rodapé em cor clara */
+            font-size: 0.9em;
+            max-width: 900px;
+            margin: auto; /* Centraliza o rodapé */
+            border-radius: 0 0 8px 8px; /* Arredonda apenas as bordas inferiores */
+        }
+        footer a {
+            color: var(--cor0); /* Links do rodapé em cor clara */
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kaizen Financeiro</h1>
+        <div>
+            <a href="index.html">Ìnicio</a>
+            <a href="e-books.html">E-books</a>
+            <a href="ferramentas.html">Ferramentas</a>
+        </div>
+    </header>
+        <main class="ebook-grid">
+
+            <div class="ebook-item">
+                <img src="imagem/capa_atraindo-prosperidade.jpeg" alt="Capa do E-book Atraindo PROSPERIDADE">
+                <h3>Atraindo PROSPERIDADE</h3>
+                <p>Descubra como reprogramar sua mente para atrair abundância e transformar sua relação com o dinheiro, através de uma jornada de autoconhecimento profundo.</p>
+                <a href="atraindo_prosperidade.html" class="cta-button" target="_blank" rel="external">Saiba Mais / Adquirir</a>
+            </div>
+    </main>
+    <footer>
+    <div class="footer-content">
+            <img width="400" src="imagem/logo.png" alt="logo">
+            <p>&copy; 2025 Kaizen Financeiro. Todos os direitos reservados.</p>
+        <p><a href="direitos.html" target="_blank" rel="external">Termos de Uso e Direitos Autorais</a></p>
+            <div class="footer-contact">
+                <a href="https://wa.me/5512920008261" target="_blank" rel="external" ><img src="imagem/whatsapp.png" alt="whatsapp" class="contact-icon">Whatsapp</a>
+                <a href="mailto:kaizenfinanceiro85@gmail.com?subject=Gostaria de saber mais sobre o produto" target="_blank" rel="external" ><img src="imagem/email.png" alt="e-mail" class="contact-icon">Email</a>
+                <a href="https://www.instagram.com/kaizen_financeiro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="external" ><img src="imagem/instagram.png" alt="instagram" class="contact-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

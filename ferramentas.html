@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+    <style>
+        /* --- CSS para a Seção de Livros Recomendados --- */
+
+.books-section {
+    margin-top: 40px; /* Espaçamento superior */
+    padding: 20px 0;
+    border-top: 1px solid var(--cor0); /* Linha divisória */
+}
+
+.books-section h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: var(--cor3);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--cor1); /* Destaque no título da seção */
+    padding-bottom: 10px;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 a 3 colunas em telas maiores, 1 em mobile */
+    gap: 30px; /* Espaço entre os livros */
+    padding: 0 10px; /* Padding para as bordas do grid */
+}
+
+.book-item {
+    background-color: #fff;
+    border: 1px solid var(--cor1); /* Borda sutil */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-item:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" no hover */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.book-item img {
+    max-width: 150px; /* Tamanho fixo para as capas */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border: 2px solid var(--cor2); /* Borda na capa */
+}
+
+.book-item h3 {
+    font-size: 1.3em;
+    color: var(--cor4);
+    margin-top: 0;
+    margin-bottom: 10px;
+    min-height: 50px; /* Garante que títulos com 1 ou 2 linhas não baguncem o layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-item p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: justify; /* Justifica o texto da descrição */
+    text-indent: 0; /* Remove indentação padrão do main p */
+    min-height: 80px; /* Garante altura para descrições */
+    overflow: hidden; /* Oculta o que transborda */
+}
+
+.book-item .buy-button {
+    display: inline-block;
+    background-color: var(--cor2);
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.book-item .buy-button:hover {
+    background-color: var(--cor3);
+}
+
+/* --- Estilo para o Combo de Livros --- */
+.combo-section {
+    background-color: var(--cor0); /* Fundo claro para o combo */
+    border: 2px dashed var(--cor1); /* Borda tracejada */
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.combo-section h3 {
+    font-size: 1.6em;
+    color: var(--cor4);
+    margin-bottom: 15px;
+}
+
+.combo-section p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+    text-indent: 0;
+    text-align: center;
+}
+
+.combo-button {
+    display: inline-block;
+    background-color: var(--cor3); /* Botão em azul escuro */
+    color: var(--cor0);
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.combo-button:hover {
+    background-color: var(--cor4);
+    transform: translateY(-3px);
+}
+
+/* --- Responsividade para a seção de livros --- */
+@media (max-width: 768px) {
+    .books-section h2 {
+        font-size: 1.5em;
+    }
+    .book-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 20px;
+        padding: 0 15px;
+    }
+    .book-item {
+        padding: 15px;
+    }
+    .book-item img {
+        max-width: 120px; /* Um pouco menor para mobile */
+    }
+    .book-item h3 {
+        font-size: 1.2em;
+        min-height: auto; /* Permite que a altura se ajuste mais livremente */
+    }
+    .book-item p {
+        font-size: 0.9em;
+        min-height: auto;
+    }
+    .combo-section {
+        padding: 20px;
+    }
+    .combo-section h3 {
+        font-size: 1.4em;
+    }
+    .combo-section p {
+        font-size: 1em;
+    }
+    .combo-button {
+        font-size: 1.1em;
+        padding: 12px 25px;
+        width: 90%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .books-section h2 {
+        font-size: 1.3em;
+    }
+    .book-item img {
+        max-width: 100px;
+    }
+}
+/* --- CSS para a Seção de Suplementos/Saúde --- */
+
+.health-section {
+    margin-top: 50px; /* Espaçamento superior */
+    padding: 20px 0;
+    border-top: 1px solid var(--cor0); /* Linha divisória */
+}
+
+.health-section h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: var(--cor3);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--cor1);
+    padding-bottom: 10px;
+}
+
+.health-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 10px;
+}
+
+.health-item {
+    background-color: #fff;
+    border: 1px solid var(--cor1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.health-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.health-item img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border: 2px solid var(--cor2);
+}
+
+.health-item h3 {
+    font-size: 1.3em;
+    color: var(--cor4);
+    margin-top: 0;
+    margin-bottom: 10px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.health-item p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 0;
+    min-height: 80px;
+    overflow: hidden;
+}
+
+.health-item .buy-button {
+    display: inline-block;
+    background-color: var(--cor2);
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.health-item .buy-button:hover {
+    background-color: var(--cor3);
+}
+
+/* --- Responsividade para a seção de saúde --- */
+@media (max-width: 768px) {
+    .health-section h2 {
+        font-size: 1.5em;
+    }
+    .health-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    .health-item {
+        padding: 15px;
+    }
+    .health-item img {
+        max-width: 120px;
+    }
+    .health-item h3 {
+        font-size: 1.2em;
+        min-height: auto;
+    }
+    .health-item p {
+        font-size: 0.9em;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .health-section h2 {
+        font-size: 1.3em;
+    }
+    .health-item img {
+        max-width: 100px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kaizen Financeiro</h1>
+        <div>
+            <a href="index.html">Ìnicio</a>
+            <a href="e-books.html">E-books</a>
+            <a href="ferramentas.html">Ferramentas</a>
+        </div>
+    </header>
+    <main>
+        <section class="books-section">
+    <h2>Livros Recomendados para sua Jornada Financeira</h2>
+    <p style="text-align: center; text-indent: 0; margin-bottom: 30px;">Amplie seu conhecimento e transforme sua mentalidade com a leitura dos grandes mestres das finanças e do desenvolvimento pessoal.</p>
+
+    <div class="book-grid">
+        <div class="book-item">
+            <img src="imagem/pai-rico.jpg" alt="Capa do livro Pai Rico, Pai Pobre">
+            <h3>Pai Rico, Pai Pobre</h3>
+            <p>Um clássico que desmistifica o conceito de riqueza, ensinando a pensar como os ricos e a diferenciar ativos de passivos. Essencial para mudar sua mentalidade financeira.</p>
+            <a href="https://a.co/d/iUCC16E" target="_blank" class="buy-button">Ver na Amazon</a>
+        </div>
+
+        <div class="book-item">
+            <img src="imagem/babilonia.jpg" alt="Capa do livro O Homem Mais Rico da Babilônia">
+            <h3>O Homem Mais Rico da Babilônia</h3>
+            <p>Através de parábolas atemporais, aprenda os princípios fundamentais da economia pessoal e da construção de riqueza, aplicáveis em qualquer época.</p>
+            <a href="https://amzn.to/3TUxBN4" target="_blank" class="buy-button">Ver na Amazon</a>
+        </div>
+
+        <div class="book-item">
+            <img src="imagem/mente-milionaria.jpg" alt="Capa do livro Os Segredos da Mente Milionária">
+            <h3>Os Segredos da Mente Milionária</h3>
+            <p>Descubra como suas crenças e "arquivos de dinheiro" influenciam sua realidade financeira e aprenda a reprogramá-los para atrair a abundância.</p>
+            <a href="https://amzn.to/3TUBlyb" target="_blank" class="buy-button">Ver na Amazon</a>
+        </div>
+    </div>
+</section>
+
+<section class="combo-section">
+    <h3>⭐ Kit Essencial para a Prosperidade ⭐</h3>
+    <p>Para uma transformação completa e acelerada, recomendamos que você leia estes três livros juntos. Eles se complementam e oferecem uma base sólida para a sua jornada de construção de riqueza e mentalidade de abundância.</p>
+    <a href="https://a.co/d/gV9s65W" target="_blank" class="combo-button">Garanta seu Kit Essencial!</a>
+    <p style="text-indent: 0; text-align: center; font-size: 0.9em; margin-top: 15px; color: #777;">(Clique para ver os livros na Amazon)</p>
+</section>
+<section class="health-section">
+    <h2>Suplementos e Produtos para seu Bem-Estar</h2>
+    <p style="text-align: center; text-indent: 0; margin-bottom: 30px;">Invista na sua saúde e energia! Produtos selecionados para te ajudar a manter o corpo e a mente em equilíbrio, essenciais para sua prosperidade.</p>
+
+    <div class="health-grid">
+        <div class="health-item">
+            <img src="imagem/omega3.jpg" alt="Imagem de Ômega 3">
+            <h3>Ômega 3 de Alta Qualidade</h3>
+            <p>Essencial para a saúde cerebral, cardiovascular e anti-inflamatória. Um aliado importante para manter seu foco e energia.</p>
+            <a href="https://amzn.to/4l8v6mt" target="_blank" class="buy-button">Ver na Amazon</a>
+        </div>
+
+        <div class="health-item">
+            <img src="imagem/vd3.jpg" alt="Imagem de Vitamina D3">
+            <h3>Vitamina D3 + K2</h3>
+            <p>Fundamental para a saúde óssea e imunidade. Contribui para o bem-estar geral e a disposição diária.</p>
+            <a href="https://amzn.to/4ldomnd" target="_blank" class="buy-button">Ver na Amazon</a>
+        </div>
+
+        <div class="health-item">
+    <img src="imagem/cha.jpg" alt="Imagem de Push Matcha - Chá Verde Matcha Premium">
+    <h3>Push Matcha - Foco e Energia Sustentável</h3>
+    <p>Pó de Chá Verde Matcha Premium, ideal para dar aquele "up" no foco, com ação antioxidante e energia prolongada. Perfeito para seu café da manhã, smoothies ou receitas.</p>
+    <a href="https://amzn.to/44g3Ts5" target="_blank" class="buy-button">Ver na Amazon</a>
+</div>
+</section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <img width="400" src="imagem/logo.png" alt="logo">
+            <p>&copy; 2025 Kaizen Financeiro. Todos os direitos reservados.</p>
+        <p><a href="direitos.html" target="_blank" rel="external">Termos de Uso e Direitos Autorais</a></p>
+            <div class="footer-contact">
+                <a href="https://wa.me/5512920008261" target="_blank" rel="external" ><img src="imagem/whatsapp.png" alt="whatsapp" class="contact-icon">Whatsapp</a>
+                <a href="mailto:kaizenfinanceiro85@gmail.com?subject=Gostaria de saber mais sobre o produto" target="_blank" rel="external" ><img src="imagem/email.png" alt="e-mail" class="contact-icon">Email</a>
+                <a href="https://www.instagram.com/kaizen_financeiro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="external" ><img src="imagem/instagram.png" alt="instagram" class="contact-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

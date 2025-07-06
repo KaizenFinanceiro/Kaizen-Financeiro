@@ -1,0 +1,142 @@
+@charset "UTF-8";
+:root{
+    --cor0: #caf0f8;
+    --cor1: #00b4d8;
+    --cor2: #0096c7;
+    --cor3: #023e8a;
+    --cor4: #03045e;
+}
+body{
+    background-color: var(--cor0);
+}
+header{
+    padding: 10px;
+    background-color: var(--cor3);
+    min-width: 300px;
+    max-width: 900px;
+    margin: auto;
+
+}
+header h1{
+    color: var(--cor0);
+    font-size: 1.5em;
+    margin: 10px;
+    font-weight: bold;
+}
+header div{
+    text-align: right;
+}
+header a{
+    text-decoration: none;
+    color: var(--cor0);
+    padding: 5px;
+}
+header a:hover{
+    background-color: var(--cor4);
+    border-radius: 5px;
+    transition-duration: 0.7s;
+}
+main{
+    padding: 10px;
+    background-color: #fFfFfF;
+    min-width: 300px;
+    max-width: 900px;
+    margin: auto;
+}
+main h1{
+    font-size: 1.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2px;
+}
+main h2{
+    font-size: 1.3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main h3{
+    font-size: 1.2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main p{
+    text-align: justify;
+    text-indent: 2em;
+}
+main img{
+    width: 80%;
+}
+div.imagem{
+    text-align: center;
+    background-color: var(--cor2);
+    border-radius: 12PX;
+}
+div.imagem > img{
+    margin: 10px;
+}
+footer {
+    background-color: var(--cor3); /* Cor de fundo escura */
+    color: black; /* Cor do texto branco */
+    padding: 30px 10px; /* Espaçamento interno */
+    text-align: center; /* Alinha o texto e os itens ao centro */
+    margin-top: 50px; /* Adiciona um espaço acima do rodapé, se necessário */
+    min-width: 300px;
+    max-width: 900px;
+    margin: auto;
+}
+
+footer .footer-content {
+    max-width: 1200px; /* Limita a largura do conteúdo para não ficar muito esticado */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+footer p {
+    margin-bottom: 15px; /* Espaçamento abaixo do parágrafo de copyright */
+    font-size: 0.9em; /* Tamanho da fonte menor para o copyright */
+}
+
+footer a {
+            color: var(--cor0);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+footer a:hover {
+            text-decoration: underline;
+        }
+
+footer .footer-contact {
+    display: flex; /* Para alinhar os ícones e links lado a lado */
+    justify-content: center; /* Centraliza os ícones */
+    gap: 25px; /* Espaço entre os links/ícones */
+    flex-wrap: wrap; /* Permite que os links quebrem para a próxima linha em telas menores */
+}
+
+footer .footer-contact a {
+    color: black; /* Cor dos links brancos */
+    text-decoration: none; /* Remove sublinhado dos links */
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center; /* Centraliza verticalmente ícone e texto */
+    font-size: 1.1em; /* Tamanho da fonte dos links */
+    transition: color 0.3s ease; /* Efeito de transição na cor */
+}
+
+footer .footer-contact a:hover {
+    color: var(--cor0); /* Cor ao passar o mouse (ex: dourado) */
+}
+
+footer .footer-contact .contact-icon {
+    width: 24px; /* Largura dos ícones */
+    height: 24px; /* Altura dos ícones */
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+}
+
+/* Para telas menores */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 10px;
+    }
+    footer .footer-contact {
+        flex-direction: column; /* Links em coluna em telas pequenas */
+        gap: 10px; /* Menos espaço entre eles */
+    }
+}
