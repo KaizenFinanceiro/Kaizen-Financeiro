@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+/* Suas variáveis :root e o restante do CSS vêm depois disso */
        :root {
             --cor0: #caf0f8; /* Azul muito claro */
             --cor1: #00b4d8; /* Azul claro */
@@ -255,36 +262,115 @@
             }
         }
 
-        /* Para telas de até 480px (celulares pequenos) */
-        @media (max-width: 480px) {
-            header {
-                padding: 15px 10px;
-            }
-            header h1 {
-                font-size: 1.8em;
-            }
-            header h2 {
-                font-size: 0.9em;
-            }
-            main {
-                padding: 15px 10px;
-            }
-            section h2 {
-                font-size: 1.4em;
-            }
-            #apresentacao-ebook p {
-                text-align: left; /* Pode ser melhor em telas muito estreitas do que justify */
-                text-indent: 0; /* Remove indentação para parágrafos curtos */
-            }
-            ul li {
-                font-size: 0.9em;
-                padding-left: 20px;
-            }
-            ul li::before {
-                font-size: 0.9em;
-            }
-            .cta-button {
-                font-size: 1em;
-                padding: 12px 25px;
-            }
-        }
+/* --- Ajuste para telas de até 480px (celulares pequenos e menores) --- */
+@media (max-width: 480px) {
+    /* Ajustes Gerais para Elementos Principais */
+    .page-container {
+        margin: 0; /* Remove margem lateral */
+        border-radius: 0; /* Remove bordas arredondadas em tela cheia */
+        box-shadow: none; /* Remove sombra */
+    }
+
+    /* Foco no Cabeçalho (Header) - Ajustes Mais Agresivos */
+    header {
+        padding: 8px; /* Padding bem reduzido para dar mais espaço ao texto */
+    }
+    header h1 {
+        font-size: 1.2em; /* Reduz o título principal para caber */
+        line-height: 1.1; /* Linha mais apertada para ocupar menos altura */
+        word-break: break-word; /* Essencial para quebrar palavras longas */
+        hyphens: auto; /* Ajuda na quebra de palavras, se suportado */
+        margin-bottom: 5px; /* Reduz margem inferior */
+    }
+    header h2 {
+        font-size: 0.65em; /* Subtítulo ainda menor */
+        margin-top: 0; /* Remove margem superior excessiva */
+        line-height: 1.1;
+    }
+
+    /* Foco no Rodapé (Footer) - Ajustes Mais Agresivos */
+    footer {
+        padding: 10px 8px; /* Padding reduzido para o rodapé */
+        font-size: 0.75em; /* Fonte menor no rodapé */
+        line-height: 1.2;
+    }
+    footer p {
+        margin-bottom: 3px; /* Reduz espaçamento entre parágrafos no rodapé */
+    }
+    footer a {
+        font-size: 0.85em; /* Links no rodapé ajustados */
+    }
+
+    /* Ajustes para o Conteúdo Principal (Mantidos ou Levemente Ajustados) */
+    main {
+        padding: 12px 8px; /* Padding do main revisado */
+    }
+    section h2 {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+    }
+    #apresentacao-ebook p {
+        font-size: 0.85em;
+        line-height: 1.6;
+        text-align: left;
+        text-indent: 0;
+    }
+    ul li {
+        font-size: 0.8em;
+        padding-left: 18px;
+        margin-bottom: 10px;
+    }
+    ul li::before {
+        font-size: 0.9em;
+    }
+
+    /* Ajustes para Botões de CTA */
+    .cta-button, .combo-button, .buy-button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+        min-width: unset;
+        width: 100%;
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Ajustes para Itens de Livro/Saúde na Grade */
+    .book-grid, .health-grid {
+        gap: 15px;
+        padding: 0 5px;
+    }
+    .book-item, .health-item {
+        padding: 15px;
+    }
+    .book-item img, .health-item img {
+        max-width: 80px;
+    }
+    .book-item h3, .health-item h3 {
+        font-size: 1em;
+        min-height: unset;
+        line-height: 1.3;
+    }
+    .book-item p, .health-item p {
+        font-size: 0.8em;
+        min-height: unset;
+    }
+
+    /* Ajustes para a Seção do Combo */
+    .combo-section {
+        padding: 15px;
+    }
+    .combo-section h3 {
+        font-size: 1.2em;
+    }
+    .combo-section p {
+        font-size: 0.95em;
+    }
+    .combo-button {
+        font-size: 1em;
+        padding: 10px 20px;
+        width: 90%;
+        max-width: 250px;
+    }
+}
