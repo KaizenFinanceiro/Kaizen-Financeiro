@@ -6,19 +6,83 @@
     <title>Ìnicio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+    <style>
+        .tool-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 5px 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-card h3 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        .tool-card p {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            flex-grow: 1; /* Garante que os parágrafos tenham a mesma altura */
+        }
+
+        /* Estilo do botão de download */
+        .download-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #27ae60; /* Cor primária do Kaizen Financeiro */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Media Query para telas menores (ajuste do layout) */
+        @media (max-width: 768px) {
+            .tools-section h2 {
+                font-size: 2em;
+            }
+            .tools-section p {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Kaizen Financeiro</h1>
-        <div>
-            <a href="index.html">Ìnicio</a>
-            <a href="e-books.html">E-books</a>
-            <a href="ferramentas.html">Ferramentas</a>
+        <div id="menu" style="color: aqua;">
+            <p>Menu</p>
+            <div id="nav">
+                <a href="index.html">Ìnicio</a>
+                <a href="e-books.html">E-books</a>
+                <a href="ferramentas.html">Ferramentas</a>
+            </div>
         </div>
     </header>
     <main>
-        <h1>Kaizen Financeiro: Sua Jornada de Prosperidade Contínua</h1>
-        <h2>Transforme sua mentalidade, otimize suas finanças, construa uma vida abundante</h2>
+        <h1>Cansado de Saber O Que Fazer, Mas Não Conseguir Fazer??</h1>
+        <p>Com a Kaizen você irá destravar sua mente e sair do ciclo de procrastinação com E-books práticos baseados em Neurociência e métodos de produtividade.</p>
+        <div class="tool-card">
+            <h3>Roda da Vida Kaizen</h3>
+            <a href="Roda da Vida.pdf" class="download-button" target="_blank" rel="external">Baixar Ferramenta Grátis</a>
+        </div>
         <h3>Nossa Missão</h3>
          <div class="imagem">
              <picture>

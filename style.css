@@ -23,6 +23,16 @@ header h1{
     margin: 10px;
     font-weight: bold;
 }
+#menu:hover{
+    display:block
+    color: white;
+    #nav{
+        display: block;
+    }
+}
+#nav{
+    display: none;
+}
 header div{
     text-align: right;
 }
