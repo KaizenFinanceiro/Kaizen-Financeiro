@@ -1,5 +1,6 @@
 @charset "UTF-8";
 :root{
+    --cor5: #000;
     --cor0: #caf0f8;
     --cor1: #00b4d8;
     --cor2: #0096c7;
@@ -7,7 +8,7 @@
     --cor4: #03045e;
 }
 body{
-    background-color: var(--cor0);
+    background-color: var(--cor5);
 }
 header{
     padding: 10px;
