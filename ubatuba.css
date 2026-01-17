@@ -1,98 +1,105 @@
 :root {
-    --ouro: #d4af37;
-    --preto: #1a1a1a;
+    --preto-profundo: #121212; /* Fundo imersivo */
+    --ouro: #d4af37; /* Autoridade e Valor */
+    --verde-dinheiro: #28a745; /* Ação e Prosperidade */
     --branco: #ffffff;
-    --cinza-claro: #f4f4f4;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--preto);
+    font-family: 'Inter', sans-serif;
+    background-color: var(--preto-profundo);
     color: var(--branco);
-    line-height: 1.6;
+    margin: 0;
+    text-align: center;
 }
 
 .container {
-    padding: 20px;
-    max-width: 600px;
+    padding: 0 20px;
+    max-width: 500px;
     margin: auto;
 }
 
-header {
-    text-align: center;
-    padding: 40px 0;
-    border-bottom: 2px solid var(--ouro);
+.banner {
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('sua-imagem.jpg');
+    background-size: cover;
+    border-bottom: 3px solid var(--ouro);
 }
 
-h1 { 
-    color: var(--ouro); 
-    margin-bottom: 10px; 
-    letter-spacing: 2px;
+h1 {
+    font-size: 1.8rem;
+    color: var(--ouro);
+    text-transform: uppercase;
+    font-weight: 800; /* Letras grossas e imponentes como no vídeo */
 }
 
 .section-title {
-    color: var(--ouro);
-    text-transform: uppercase;
     font-size: 1.1rem;
-    margin-top: 30px;
-    border-left: 4px solid var(--ouro);
-    padding-left: 10px;
-    font-weight: bold;
+    color: var(--ouro);
+    margin: 40px 0 20px;
+    letter-spacing: 1px;
 }
 
-.card {
-    background: #2a2a2a;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 15px 0;
+/* Atividades Gratuitas (Reciprocidade) */
+.activities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.btn-activity {
+    background: transparent;
     border: 1px solid #444;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    color: #ccc;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-radius: 5px;
 }
 
-.highlight {
-    border: 1px solid var(--ouro);
+/* Cards de Venda */
+.card {
+    background: #1e1e1e;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 1px solid #333;
 }
 
 .quote {
     font-style: italic;
-    color: #ddd;
-    margin-bottom: 10px;
+    font-size: 1rem;
     display: block;
-    font-size: 1.05rem;
+    margin-bottom: 15px;
+    color: #eee;
 }
 
 .book-source {
     color: var(--ouro);
     font-weight: bold;
-    font-size: 0.9rem;
     display: block;
-    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
 }
 
-.btn {
+/* Botão Verde de Compra (Psicologia do 'GO') */
+.btn-buy {
     display: block;
-    background: linear-gradient(45deg, var(--ouro), #f2d06b);
-    color: #000;
-    text-align: center;
-    padding: 15px;
+    background-color: var(--verde-dinheiro);
+    color: white;
+    padding: 18px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
-    margin-top: 20px;
     text-transform: uppercase;
-    transition: transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
 }
 
-.btn:active {
-    transform: scale(0.95);
+.btn-buy:active {
+    transform: scale(0.96);
 }
 
 .footer {
-    text-align: center;
-    font-size: 0.8rem;
-    color: #777;
-    margin-top: 50px;
-    padding-bottom: 30px;
+    padding: 40px;
+    color: #444;
 }
