@@ -1,14 +1,14 @@
 :root {
-    --preto-profundo: #121212; /* Fundo imersivo */
-    --ouro: #d4af37; /* Autoridade e Valor */
-    --verde-dinheiro: #28a745; /* Ação e Prosperidade */
+    --fundo-profundo: #19262f; /* Azul Base da Paleta 2 */
+    --detalhe-medio: #46556a;  /* Azul para Cards e Bordas */
+    --azul-claro: #bcceda;     /* Destaques, Fontes e CTAs */
     --branco: #ffffff;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--preto-profundo);
-    color: var(--branco);
+    background-color: var(--fundo-profundo);
+    color: var(--azul-claro);
     margin: 0;
     text-align: center;
 }
@@ -21,26 +21,28 @@ body {
 
 .banner {
     padding: 60px 20px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('sua-imagem.jpg');
+    background: linear-gradient(rgba(25, 38, 47, 0.85), rgba(25, 38, 47, 0.85)), url('sua-imagem.jpg');
     background-size: cover;
-    border-bottom: 3px solid var(--ouro);
+    border-bottom: 3px solid var(--azul-claro);
 }
 
 h1 {
     font-size: 1.8rem;
-    color: var(--ouro);
+    color: var(--branco);
     text-transform: uppercase;
-    font-weight: 800; /* Letras grossas e imponentes como no vídeo */
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .section-title {
     font-size: 1.1rem;
-    color: var(--ouro);
+    color: var(--azul-claro);
     margin: 40px 0 20px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-/* Atividades Gratuitas (Reciprocidade) */
+/* Atividades Gratuitas usando sua grid */
 .activities-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -48,22 +50,24 @@ h1 {
 }
 
 .btn-activity {
-    background: transparent;
-    border: 1px solid #444;
-    color: #ccc;
+    background: rgba(188, 206, 218, 0.05);
+    border: 1px solid var(--detalhe-medio);
+    color: var(--azul-claro);
     padding: 15px;
     text-decoration: none;
     font-size: 0.8rem;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
-/* Cards de Venda */
+/* Seus Cards com a cor da Paleta 2 */
 .card {
-    background: #1e1e1e;
+    background: var(--detalhe-medio);
     padding: 25px;
     margin-bottom: 20px;
     border-radius: 15px;
-    border: 1px solid #333;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .quote {
@@ -71,28 +75,29 @@ h1 {
     font-size: 1rem;
     display: block;
     margin-bottom: 15px;
-    color: #eee;
+    color: var(--branco);
 }
 
 .book-source {
-    color: var(--ouro);
+    color: var(--azul-claro);
     font-weight: bold;
     display: block;
     margin-bottom: 20px;
     font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
-/* Botão Verde de Compra (Psicologia do 'GO') */
+/* Botão de Compra com alto contraste */
 .btn-buy {
     display: block;
-    background-color: var(--verde-dinheiro);
-    color: white;
+    background-color: var(--azul-claro);
+    color: var(--fundo-profundo);
     padding: 18px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    transition: 0.2s;
 }
 
 .btn-buy:active {
@@ -101,8 +106,11 @@ h1 {
 
 .footer {
     padding: 40px;
-    color: #444;
+    color: var(--detalhe-medio);
+    font-size: 12px;
 }
+
+/* Seu WhatsApp Fixo */
 .wa-fixo {
     position: fixed;
     bottom: 20px;
