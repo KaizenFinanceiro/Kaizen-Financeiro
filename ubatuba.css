@@ -11,6 +11,7 @@ body {
     color: var(--azul-claro);
     margin: 0;
     text-align: center;
+    line-height: 1.6;
 }
 
 .container {
@@ -127,4 +128,9 @@ h1 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     z-index: 9999;
     font-size: 14px;
+}
+.btn-activity:hover {
+    background: rgba(188, 206, 218, 0.15);
+    border-color: var(--azul-claro);
+    color: var(--branco);
 }
