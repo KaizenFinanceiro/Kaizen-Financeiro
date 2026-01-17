@@ -1,116 +1,98 @@
-/* Configurações Gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --ouro: #d4af37;
+    --preto: #1a1a1a;
+    --branco: #ffffff;
+    --cinza-claro: #f4f4f4;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
-    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    background-color: var(--preto);
+    color: var(--branco);
+    line-height: 1.6;
 }
 
-/* Hero Section */
-.hero-section {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 80px 20px;
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+header {
     text-align: center;
-    border-bottom: 6px solid #fbbf24; /* Dourado */
+    padding: 40px 0;
+    border-bottom: 2px solid var(--ouro);
 }
 
-.hero-title {
-    font-size: 2.8rem;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.hero-subtitle {
-    font-size: 1.3rem;
-    color: #fbbf24;
-    font-weight: bold;
-}
-
-/* Grid de Conteúdo */
-.content-grid {
-    padding: 60px 20px;
-    background-color: #f8f9fa;
+h1 { 
+    color: var(--ouro); 
+    margin-bottom: 10px; 
+    letter-spacing: 2px;
 }
 
 .section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
+    color: var(--ouro);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    border-left: 4px solid var(--ouro);
+    padding-left: 10px;
+    font-weight: bold;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: 0 auto;
+.card {
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #444;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-.card-kaizen {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-left: 5px solid #e63946; /* Vermelho Agressivo */
-    transition: transform 0.3s;
+.highlight {
+    border: 1px solid var(--ouro);
 }
 
-.card-kaizen:hover {
-    transform: translateY(-5px);
-}
-
-.card-kaizen h3 {
-    margin-bottom: 15px;
-    color: #1a1a1a;
-}
-
-/* Frase de Impacto */
-.impact-quote {
-    background-color: #fbbf24;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.impact-quote blockquote {
-    font-size: 1.8rem;
-    font-weight: 900;
+.quote {
     font-style: italic;
+    color: #ddd;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1.05rem;
 }
 
-/* CTA - Chamada para Ação */
-.cta-area {
-    padding: 80px 20px;
+.book-source {
+    color: var(--ouro);
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.btn {
+    display: block;
+    background: linear-gradient(45deg, var(--ouro), #f2d06b);
+    color: #000;
     text-align: center;
-}
-
-.btn-cta {
-    display: inline-block;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 20px 50px;
+    padding: 15px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.4rem;
-    border-radius: 5px;
-    margin: 30px 0;
-    transition: background 0.3s;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    transition: transform 0.2s ease;
 }
 
-.btn-cta:hover {
-    background-color: #e63946;
+.btn:active {
+    transform: scale(0.95);
 }
 
-/* Footer */
-.main-footer {
-    padding: 30px;
-    background: #1a1a1a;
-    color: #888;
+.footer {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 50px;
+    padding-bottom: 30px;
 }
