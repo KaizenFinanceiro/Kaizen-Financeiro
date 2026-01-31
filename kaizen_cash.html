@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizen Cash - Planilha Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-produto.css">
+    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div class="page-container">
+        <header>
+            <h1>Kaizen Cash</h1>
+            <h2>Controle Financeiro de Elite para o seu Negócio</h2>
+        </header>
+
+        <main>
+            <section class="hero-content">
+                <div class="main-img">
+                    <img id="featured" src="imagem/planilha-dash.jpeg" alt="Dashboard Kaizen Cash">
+                </div>
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <img class="thumb active" src="imagem/planilha-dash.jpeg" onclick="changeImg(this)" style="width: 80px; border: 1px solid #d4af37; cursor: pointer;">
+                    <img class="thumb active" src="imagem/planilha-category.jpeg" onclick="changeImg(this)" style="width: 80px; border: 1px solid #d4af37; cursor: pointer;">
+                    <img class="thumb" src="imagem/planilha-gasto.jpeg" onclick="changeImg(this)" style="width: 80px; border: 1px solid #d4af37; cursor: pointer;">
+                    <img class="thumb" src="imagem/planilha-ganho.jpeg" onclick="changeImg(this)" style="width: 80px; border: 1px solid #d4af37; cursor: pointer;">
+                </div>
+            </section>
+
+              <section class="benefits-section">
+    <h3>Por que usar a Kaizen Cash?</h3>
+    <ul>
+        <li><strong>Cálculo Real:</strong> Saiba exatamente quanto sobrou após custos fixos e variáveis.</li>
+        <li><strong>Automação Total:</strong> Você insere os dados e ela te entrega o lucro líquido mastigado.</li>
+        <li><strong>Visual de App:</strong> Gráficos automáticos que mostram a saúde do seu bolso em tempo real.</li>
+        <li><strong>Gestão de Estoque:</strong> Controle seus insumos para nunca faltar produto na hora da venda.</li>
+        <li><strong>Portabilidade:</strong> Use no celular durante as vendas ou no PC para fechar o mês.</li>
+    </ul>
+            </section>
+
+            <section style="text-align: center; color: #d4af37; font-size: 1.2rem; font-weight: bold;">
+                <p>Investimento: R$ 40,00</p>
+                <p style="font-size: 0.9rem; color: #fff;">Otimize sua gestão agora e recupere o valor no primeiro dia de vendas!</p>
+            </section>
+
+            <a href="https://pay.hotmart.com/O104187857S" class="cta-button">
+                QUERO A PLANILHA KAIZEN CASH
+            </a>
+
+            <p class="garantia">🛡️ Receba agora via E-mail | Compra Segura</p>
+        </main>
+    </div>
+
+    <script>
+        function changeImg(element) {
+            document.getElementById('featured').src = element.src;
+            let thumbs = document.getElementsByClassName('thumb');
+            for (let i = 0; i < thumbs.length; i++) {
+                thumbs[i].style.opacity = "0.5";
+            }
+            element.style.opacity = "1";
+        }
+    </script>
+</body>
+</html>

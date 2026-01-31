@@ -1,0 +1,175 @@
+/* Variáveis de Cores - Identidade Kaizen Premium */
+:root {
+    --bg-dark: #0a0a0a;        /* Fundo quase preto, bem moderno */
+    --gold: #d4af37;           /* Dourado clássico */
+    --gold-light: #f1d592;     /* Dourado brilhante para hover */
+    --text-light: #f4f4f4;     /* Texto quase branco */
+    --green-profit: #2ecc71;   /* Verde do lucro para o botão */
+    --border-gold: 2px solid #d4af37;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Inter', sans-serif; /* Fontes modernas */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container Principal */
+.page-container {
+    max-width: 900px;
+    width: 95%;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03); /* Leve transparência */
+    border: var(--border-gold);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+header h1 {
+    color: var(--gold);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header h2 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--gold-light);
+}
+
+/* Seção de Destaque (Imagem/Vídeo) */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.hero-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: var(--border-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+iframe {
+    width: 100%;
+    max-width: 315px;
+    height: 560px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+}
+
+/* Listas e Benefícios */
+.benefits-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 10px;
+}
+
+.benefits-section h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+}
+
+ul li::before {
+    content: '⚡'; /* Ícone moderno */
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+/* Botão de Compra - O destaque do site */
+.cta-button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--green-profit);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.5);
+    background-color: #27ae60;
+}
+
+/* Garantia */
+.garantia {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    margin-top: 10px;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+iframe {
+    width: 315px; /* Largura padrão de Short */
+    height: 560px; /* Altura padrão de Short */
+    border-radius: 15px;
+    border: var(--border-gold);
+    background-color: #000; /* Fundo caso o vídeo demore a carregar */
+    display: block;
+    margin: 20px auto;
+}
+
+/* No celular, se a tela for muito pequena, ele diminui proporcionalmente */
+@media (max-width: 360px) {
+    iframe {
+        width: 280px;
+        height: 498px;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    .page-container { margin: 10px auto; width: 98%; }
+}
